@@ -1,1 +1,0 @@
-# taskist-backend-adonisjs
