@@ -24,25 +24,19 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 
+Route.resource('tasks', 'TasksController').apiOnly()
 
-// API Auth
+// // API Auth
+// Route.group(() => {
+//   Route.group(() => {
+//     Route.post('/register', 'AuthController.register')
+//     Route.post('/login', 'AuthController.login')
+//     Route.post('/logout', 'AuthController.logout')
+//   }).prefix('/auth')
 
-// API routes
-Route.group(()=>{
-  Route.post('login', async ({auth, request, response})=>{
-    const {email,password} = JSON.parse(request.body())
-    console.log(email)
-    console.log(password)
-
-    try {
-      const token = await auth.use('api').attempt(email, password)
-      return token
-    } catch (error) {
-      return response.unauthorized('Invalid credentials')
-    }
-  })
-  Route.group(() => {
-    Route.resource('tasks', 'TasksController')
-  }).middleware('auth')
-}).prefix('/api')
+//   // API resources
+//   Route.group(() => {
+//     Route.resource('tasks', 'TasksController').apiOnly()
+//   }).middleware('auth')
+// }).prefix('/api')
 
