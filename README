@@ -1,0 +1,17 @@
+# Requirements:
+
+NodeJS >= v18.14.1
+NPM >= v9.3.1
+
+# Project Setup (Run all the comands below on the project root directory)
+
+- Run the following command to install the dependencies
+npm install
+
+- Configure .env file by duplicating .env.example file and rename it to .env \
+
+- Run the following command to create the database tables (database used is sqlite)
+node ace migrate:fresh
+
+- Run the following command to start the server in developement
+node ace serve
