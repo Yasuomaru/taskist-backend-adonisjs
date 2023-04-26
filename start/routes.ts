@@ -26,7 +26,7 @@ Route.get('/', async () => {
 
 Route.resource('tasks', 'TasksController').apiOnly()
 
-// // API Auth
+// // API Auth - for further development
 // Route.group(() => {
 //   Route.group(() => {
 //     Route.post('/register', 'AuthController.register')
@@ -39,4 +39,3 @@ Route.resource('tasks', 'TasksController').apiOnly()
 //     Route.resource('tasks', 'TasksController').apiOnly()
 //   }).middleware('auth')
 // }).prefix('/api')
-
