@@ -5,13 +5,27 @@ NPM >= v9.3.1
 
 ## Project Setup (Run all the comands below on the project root directory)
 
-- Run the following command to install the dependencies
-  npm install
+> - Run the following command to install the dependencies
+>   _npm install_
+>
+> - Configure .env file by duplicating .env.example file and rename it to .env \
+>
+> - Setup Lucid ORM
+>   _node ace configure @adonisjs/lucid_
+>   Use SQLite since it's already configured. You may change this just follow the documentation
+>
+> - Run the following command to create the database tables (database used is sqlite)
+>   _node ace migration:fresh_
+>
+> - Run the following command to start the server in developement
+>   _node ace serve_
 
-- Configure .env file by duplicating .env.example file and rename it to .env \
+## Alternative
 
-- Run the following command to create the database tables (database used is sqlite)
-  node ace migration:fresh
+- Run the custom npm script:
 
-- Run the following command to start the server in developement
-  node ace serve
+> - _npm run setup_
+>
+>   - select SQLite
+>
+> - _npm run dev_
