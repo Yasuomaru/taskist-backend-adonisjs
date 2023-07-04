@@ -13,7 +13,7 @@ export default class TasksController {
     const data = request.only(['title', 'isCompleted'])
 
     //validate data
-    if (!data.title || !data.isCompleted)
+    if (!data.title || data.isCompleted.IsNullOrEmpty )
       return { message: 'Invalid data' }
 
     //title must be string
